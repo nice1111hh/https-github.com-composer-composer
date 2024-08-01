@@ -8,24 +8,34 @@ references:
   - https://www.jit.io
 tags: []
 items:
-  - name: |
-      Confirm your hosting model
+  - name: Scan your code for vulnerabilities (SAST)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
+  - name: Scan your code dependencies for vulnerabilities (SCA)
+    uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
+  - name: Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
     input:
       note: ldskjfldskfjdlsk
       requirements:
         '1':
-          status: passed
           note: ljcvlkcxv
-  - name: Scan your code for vulnerabilities (SAST)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
+          status: passed
+      status: null
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
   - name: Generate a Software Bill of Materials (SBOM)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
-  - name: Scan your code dependencies for vulnerabilities (SCA)
-    uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
+  - name: |
+      Enable AWS Business Support (or greater) on all production AWS accounts
+    uses: >-
+      jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          status: passed
+          note: fdadfad
 
